@@ -21,14 +21,10 @@ const images = [
 
 const imagesById = document.querySelector('#gallery')
 
-const imagesString = []
+let imagesString = ''
 
-for (let i = 0; i < images.length; i++) {
-  imagesString[
-    i
-  ] = `'<li><img src='${images[i].url}' alt='${images[i].alt}'></li>'`
-}
+images.forEach(
+  (el) => (imagesString += `<li><img src='${el.url}' alt='${el.alt}'></li>`),
+)
 
-imagesString.forEach((image) => {
-  imagesById.insertAdjacentHTML('beforeend', image)
-})
+imagesById.insertAdjacentHTML('beforeend', imagesString)

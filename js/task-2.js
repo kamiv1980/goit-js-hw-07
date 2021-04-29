@@ -1,6 +1,7 @@
 'use strict'
 console.log('Task 2')
 
+const ingredient = document.getElementById('ingredient')
 const ingredients = [
   'Картошка',
   'Грибы',
@@ -9,12 +10,8 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ]
+let elements = ''
 
-const elements = []
+ingredients.forEach((el) => (elements += `<li> ${el} </li>`))
 
-for (let i = 0; i < ingredients.length; i++) {
-  elements[i] = document.createElement('li')
-  elements[i].textContent = ingredients[i]
-}
-
-elements.forEach((el) => ingredient.appendChild(el))
+ingredient.insertAdjacentHTML('afterbegin', elements)
